@@ -20,7 +20,7 @@ resource "azurerm_public_ip" "pip" {
   location            = "West Europe"
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Dynamic"
-  domain_name_label   = "bookdevopsdemo"
+  domain_name_label   = "bookdevopsdemo25568"
   tags = {
     environment = "production"
     owner       = "your-team"
