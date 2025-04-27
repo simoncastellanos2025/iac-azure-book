@@ -9,6 +9,10 @@ resource "azurerm_network_interface" "nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.pip.id
   }
+  tags = {
+    environment = "production"
+    owner       = "your-team"
+  }
 }
 
 resource "azurerm_public_ip" "pip" {
@@ -17,6 +21,10 @@ resource "azurerm_public_ip" "pip" {
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Dynamic"
   domain_name_label   = "bookdevopsdemo"
+  tags = {
+    environment = "production"
+    owner       = "your-team"
+  }
 }
 
 resource "azurerm_storage_account" "stor" {
@@ -25,6 +33,10 @@ resource "azurerm_storage_account" "stor" {
   resource_group_name      = azurerm_resource_group.rg.name
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  tags = {
+    environment = "production"
+    owner       = "your-team"
+  }
 }
 
 resource "azurerm_virtual_machine" "vm" {
@@ -61,5 +73,9 @@ resource "azurerm_virtual_machine" "vm" {
   boot_diagnostics {
     enabled     = true
     storage_uri = azurerm_storage_account.stor.primary_blob_endpoint
+  }
+  tags = {
+    environment = "production"
+    owner       = "your-team"
   }
 }
