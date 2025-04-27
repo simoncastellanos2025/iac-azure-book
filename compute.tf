@@ -28,7 +28,7 @@ resource "azurerm_public_ip" "pip" {
 }
 
 resource "azurerm_storage_account" "stor" {
-  name                     = "book-stor-25568777"
+  name                     = "bookstor25568777"
   location                 = "West Europe"
   resource_group_name      = azurerm_resource_group.rg.name
   account_tier             = "Standard"
