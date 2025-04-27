@@ -16,7 +16,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                = "book-ip"
+  name                = "book-ip-25568777"
   location            = "West Europe"
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Dynamic"
@@ -28,7 +28,7 @@ resource "azurerm_public_ip" "pip" {
 }
 
 resource "azurerm_storage_account" "stor" {
-  name                     = "storage-simon-25568777"
+  name                     = "book-stor-25568777"
   location                 = "West Europe"
   resource_group_name      = azurerm_resource_group.rg.name
   account_tier             = "Standard"
